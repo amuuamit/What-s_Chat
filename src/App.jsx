@@ -2,7 +2,6 @@
 import './App.css'
 import Register from './Pages/Register'
 import "./Style.scss"
-import { Button } from "@/components/ui/button"
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'

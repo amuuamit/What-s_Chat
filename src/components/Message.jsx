@@ -9,7 +9,7 @@ const Message = ({ message }) => {
 
   const isOwner = message.senderId === currentUser.uid;
 
-  // Format the timestamp
+  // Format the timestamp for the real time show
   const formattedDate = message.date ? format(message.date.toDate(), 'PPpp') : '';
 
   return (

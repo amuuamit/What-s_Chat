@@ -26,22 +26,17 @@ console.log("inside");
 
       //Create a unique image name
       const date = new Date().getTime();
-      // const storageRef = ref(storage, `${displayName + date}`);
-
-      // await uploadBytesResumable(storageRef, file).then(() => {
-        // getDownloadURL(storageRef).then(async (downloadURL) => {
-          // try {
-            //Update profile
+     
             await updateProfile(res.user, {
               displayName,
-              // photoURL: downloadURL,
+             
             });
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
-              // photoURL: downloadURL,
+            
             });
 
             //create empty user chats on firestore
@@ -67,13 +62,8 @@ console.log("inside");
           <input required type="text" placeholder="display name" />
           <input required type="email" placeholder="email" />
           <input required type="password" placeholder="password" />
-          {/* <input required style={{ display: "none" }} type="file" id="file" />
-          <label htmlFor="file">
-            <img src={Add} alt="" />
-            <span>Add an avatar</span>
-          </label> */}
+         
           <button disabled={loading}>Sign up</button>
-          {/* {loading && "Uploading and compressing the image please wait..."} */}
           {err && <span>Something went wrong</span>}
         </form>
         <p>
